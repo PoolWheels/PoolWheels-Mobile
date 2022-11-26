@@ -29,7 +29,7 @@ export default function TripUserTraveler(props) {
           <View style={stylesModal.centeredView}>
             <View style={stylesModal.modalView}>
               <Text style={stylesModal.modalText}>
-                👤 CONDUCTOR: {props.driver.nombre}
+                👤 {props.driver.nombre}
               </Text>
               <Text style={stylesModal.modalText }>
                 Calificación: {props.driver.calificacion}
