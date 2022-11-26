@@ -1,8 +1,8 @@
 import { StatusBar } from "expo-status-bar";
-import { React, useState, useEffect } from "react";
+import { React, useState} from "react";
 import { Text, View, FlatList, Dimensions } from "react-native";
 import { Button } from "react-native-elements";
-import { saveTrips, activeTrips, newTrip, deleteTrip } from "../utils/data";
+import { saveTrips, deleteTrip } from "../utils/data";
 import TripUserTraveler from "./TripUserTraveler";
 import styles  from "../styles/hometrav-user"
 
@@ -38,6 +38,7 @@ export default function HomeTravelerUser() {
               >
                 <TripUserTraveler
                   id={item.id}
+                  driver = {item.driver}
                   index={index}
                   addrInit={item.addrInit}
                   availableSeats={item.availableSeats}

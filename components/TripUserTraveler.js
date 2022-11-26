@@ -1,7 +1,7 @@
-import { React} from "react";
-import { View, Text, Pressable } from "react-native";
-import { Button } from "react-native-elements";
+import { React, useState} from "react";
+import { Modal, View, Text, Pressable } from "react-native";
 import styles from "../styles/trip";
+import stylesModal from "../styles/modalstyle";
 
 export default function TripUserTraveler(props) {
     const formatStops = (stops) => {
@@ -12,9 +12,47 @@ export default function TripUserTraveler(props) {
         }
         return arrayStops;
     };
+    const[modalVisible, setModalVisible] = useState(false);
+
     return (
       <View style={styles.trip}>
         <Text style={styles.title}> VIAJE N°{props.index + 1}</Text>
+        <Text></Text>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => {
+            setModalVisible(!modalVisible);
+          }}
+        >
+          <View style={stylesModal.centeredView}>
+            <View style={stylesModal.modalView}>
+              <Text style={stylesModal.modalText}>
+                👤 CONDUCTOR: {props.driver.nombre}
+              </Text>
+              <Text style={stylesModal.modalText}>TEL: {props.driver.tel}</Text>
+              <Text style={stylesModal.modalText}>
+                Vehículo: {props.driver.modelCar}
+              </Text>
+              <Text style={stylesModal.modalText}>
+                PLACA: {props.driver.placa}
+              </Text>
+              <Pressable
+                style={[stylesModal.button, stylesModal.buttonClose]}
+                onPress={() => setModalVisible(!modalVisible)}
+              >
+                <Text style={stylesModal.textStyle}> Cerrar</Text>
+              </Pressable>
+            </View>
+          </View>
+        </Modal>
+        <Pressable
+          style={[stylesModal.button, stylesModal.buttonOpen]}
+          onPress={() => setModalVisible(true)}
+        >
+          <Text style={stylesModal.textStyle}> 🚦 INFO CONDUCTOR</Text>
+        </Pressable>
         <Text></Text>
         <Text style={styles.subtitles}>
           {" "}
