@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { React, useState, useEffect } from "react";
 import { Text, View, FlatList, Dimensions } from "react-native";
+import { Button } from "react-native-elements";
 import { saveTrips, activeTrips, newTrip, deleteTrip } from "../utils/data";
 import TripUserTraveler from "./TripUserTraveler";
 import styles  from "../styles/hometrav-user"
@@ -30,17 +31,21 @@ export default function HomeTravelerUser() {
                 }}
               >
                 <TripUserTraveler
-                  index = {index}  
+                  index={index}
                   addrInit={item.addrInit}
                   availableSeats={item.availableSeats}
                   initTime={item.initTime}
                   stops={item.stops}
                   contentButton={"Eliminar Viaje"}
+                  secondButton={true}
+                  contentSecondButton={"PAGAR"}
                 ></TripUserTraveler>
               </View>
             );
           }}
         ></FlatList>
+        <Button title={"AGREGAR VIAJE"}></Button>
+        <Text>  </Text>
       </View>
     );
 };

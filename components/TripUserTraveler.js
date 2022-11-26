@@ -1,6 +1,6 @@
 import { React, Alert } from "react";
-import { View, Text } from "react-native";
-import { Card, Button} from "react-native-elements";
+import { View, Text, Pressable } from "react-native";
+import { Button } from "react-native-elements";
 import styles from "../styles/trip";
 
 export default function TripUserTraveler(props) {
@@ -14,22 +14,49 @@ export default function TripUserTraveler(props) {
     };
     return (
       <View style={styles.trip}>
-        <Text style={styles.title}> VIAJE {props.index + 1}</Text>
-        <Text> PUNTO DE PARTIDA: {props.addrInit}</Text>
-        <Text> PUESTOS DISPONIBLES: {props.availableSeats}</Text>
-        <Text> HORA DE SALIDA: {props.initTime}</Text>
-        <Text> PARADAS PRINCIPALES:</Text>
+        <Text style={styles.title}> VIAJE N°{props.index + 1}</Text>
+        <Text></Text>
+        <Text style={styles.subtitles}>
+          {" "}
+          PUNTO DE PARTIDA: {props.addrInit}
+        </Text>
+        <Text style={styles.subtitles}>
+          {" "}
+          PUESTOS DISPONIBLES: {props.availableSeats}
+        </Text>
+        <Text style={styles.hour}> HORA DE SALIDA: {props.initTime}</Text>
+        <Text></Text>
+
+        <Text style={styles.subtitles}> PARADAS PRINCIPALES:</Text>
         {formatStops(props.stops).map((stop, index) => (
-          <Text key={index}>
-            {" "}
-            {index + 1}. {stop[0] + ":  $ " + stop[1]}
+          <Text key={index} style={styles.stops}>
+            {"          "}
+            {index + 1}. {stop[0] + ": $" + stop[1]}
           </Text>
         ))}
-        <Button
-          title={props.contentButton}
+
+        <Text></Text>
+        <Pressable
+          style={styles.button}
           onPress={(e) => alert("Viaje eliminado.")}
           content={props.contentButton}
-        ></Button>
+        >
+          <Text style={styles.text}>{props.contentButton}</Text>
+        </Pressable>
+
+        <Text>{"          "}</Text>
+        {props.secondButton ? (
+          <Pressable
+            style={styles.button}
+            onPress={(e) =>
+              alert(" VIAJE PAGADO ✔️ Recuerda Calificar a tu conductor. ")
+            }
+          >
+            <Text style={styles.text}>{props.contentSecondButton}</Text>
+          </Pressable>
+        ) : (
+          <Text></Text>
+        )}
       </View>
     );
 
