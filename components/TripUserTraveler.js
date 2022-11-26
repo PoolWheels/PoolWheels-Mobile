@@ -1,5 +1,5 @@
 import { React, useState} from "react";
-import { Modal, View, Text, Pressable } from "react-native";
+import { Alert, Modal, View, Text, Pressable } from "react-native";
 import styles from "../styles/trip";
 import stylesModal from "../styles/modalstyle";
 
@@ -94,7 +94,7 @@ export default function TripUserTraveler(props) {
           <Pressable
             style={styles.secondButton}
             onPress={(e) =>
-              alert(" VIAJE PAGADO ✔️ Recuerda Calificar a tu conductor. ")
+              Alert.alert(" VIAJE PAGADO ✔️", "Recuerda calificar a tu conductor. ")
             }
           >
             <Text style={styles.text}>{props.contentSecondButton}</Text>
