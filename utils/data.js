@@ -3,6 +3,7 @@ const saveTrips = [
     id: "015000",
     driver: {
       nombre: "David López",
+      calificacion: "5.0",
       tel: "3209876756",
       modelCar: "Chevrolet Corsa Plateado",
       placa: "BTR 161",
@@ -16,6 +17,7 @@ const saveTrips = [
     id: "016000",
     driver: {
       nombre: "Lorena Ardila",
+      calificacion: "4.96",
       tel: "3209034561",
       modelCar: "Renault Logan Negro",
       placa: "ACM 161",
@@ -29,6 +31,7 @@ const saveTrips = [
     id: "017000",
     driver: {
       nombre: "Manolo Caro",
+      calificacion: "5.0",
       tel: "3134236090",
       modelCar: "Renault Logan Rojo",
       placa: "KRG 234",
@@ -45,6 +48,7 @@ const activeTrips = [
     id: "018000",
     driver: {
       nombre: "Manolo Caro",
+      calificacion: "5.0",
       tel: "3134236090",
       modelCar: "Renault Logan Rojo",
       placa: "KRG 234",
@@ -58,9 +62,11 @@ const activeTrips = [
     id: "019000",
     driver: {
       nombre: "Laura Franco",
+      calificacion: "5.0",
       tel: "3112224090",
       modelCar: "Renault Logan Negro",
       placa: "ARM 124",
+      calificacion: "4.9",
     },
     availableSeats: 3,
     initTime: "7:00",
@@ -75,9 +81,11 @@ const activeTrips = [
     id: "020000",
     driver: {
       nombre: "Saul Mendez",
+      calificacion: "5.0",
       tel: "3152342010",
       modelCar: "Bajaj CT100",
       placa: "AKR 124",
+      calificacion: "4.8",
     },
     availableSeats: 1,
     initTime: "7:00",
@@ -88,6 +96,11 @@ const activeTrips = [
   },
 ];
 
+const newActiveTrip = (trip) =>{
+  activeTrips.push(trip);
+  return activeTrips;
+}
+
 const newTrip = (trip) => {
     saveTrips.push(trip);
     deleteTrip(trip);
@@ -97,7 +110,8 @@ const newTrip = (trip) => {
 const deleteTrip = async  (idTrip) => {
   for (let i = 0; i < saveTrips.length; i++){
     if (saveTrips[i].id === idTrip){
-      saveTrips.splice(i, 1);
+      //newActiveTrip(saveTrips[i]);
+      const trip = saveTrips.splice(i, 1);
       return saveTrips;
     } 
     

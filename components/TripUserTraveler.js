@@ -31,7 +31,12 @@ export default function TripUserTraveler(props) {
               <Text style={stylesModal.modalText}>
                 👤 CONDUCTOR: {props.driver.nombre}
               </Text>
-              <Text style={stylesModal.modalText}>TEL: {props.driver.tel}</Text>
+              <Text style={stylesModal.modalText }>
+                Calificación: {props.driver.calificacion}
+              </Text>
+              <Text style={stylesModal.modalText}>
+                📱 TEL: {props.driver.tel}
+              </Text>
               <Text style={stylesModal.modalText}>
                 Vehículo: {props.driver.modelCar}
               </Text>
@@ -42,7 +47,7 @@ export default function TripUserTraveler(props) {
                 style={[stylesModal.button, stylesModal.buttonClose]}
                 onPress={() => setModalVisible(!modalVisible)}
               >
-                <Text style={stylesModal.textStyle}> Cerrar</Text>
+                <Text style={stylesModal.textStyle}> X </Text>
               </Pressable>
             </View>
           </View>
