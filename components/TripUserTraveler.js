@@ -1,4 +1,4 @@
-import { React, Alert } from "react";
+import { React} from "react";
 import { View, Text, Pressable } from "react-native";
 import { Button } from "react-native-elements";
 import styles from "../styles/trip";
@@ -38,7 +38,9 @@ export default function TripUserTraveler(props) {
         <Text></Text>
         <Pressable
           style={styles.button}
-          onPress={(e) => alert("Viaje eliminado.")}
+          onPress={(e) => {
+            props.functionOne(props.id);
+          }}
           content={props.contentButton}
         >
           <Text style={styles.text}>{props.contentButton}</Text>
@@ -47,7 +49,7 @@ export default function TripUserTraveler(props) {
         <Text>{"          "}</Text>
         {props.secondButton ? (
           <Pressable
-            style={styles.button}
+            style={styles.secondButton}
             onPress={(e) =>
               alert(" VIAJE PAGADO ✔️ Recuerda Calificar a tu conductor. ")
             }
@@ -57,6 +59,7 @@ export default function TripUserTraveler(props) {
         ) : (
           <Text></Text>
         )}
+        <Text></Text>
       </View>
     );
 

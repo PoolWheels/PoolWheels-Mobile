@@ -91,12 +91,18 @@ const activeTrips = [
 const newTrip = (trip) => {
     saveTrips.push(trip);
     deleteTrip(trip);
-    return saveTrips    
+    return saveTrips;    
 }
 
-const deleteTrip = (trip) => {
-    saveTrips.pop(trip);
-    return saveTrips
+const deleteTrip = async  (idTrip) => {
+  for (let i = 0; i < saveTrips.length; i++){
+    if (saveTrips[i].id === idTrip){
+      saveTrips.splice(i, 1);
+      return saveTrips;
+    } 
+    
+  }
+  return saveTrips
 }
 
 export  {

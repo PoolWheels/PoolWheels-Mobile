@@ -5,7 +5,7 @@ const width = Dimensions.get("window").width * 0.7;
 
 export default StyleSheet.create({
   trip: {
-    width: "80%",
+    width: "90%",
     resizeMode: "cover",
     borderRadius: 5,
     margin: 0,
@@ -14,13 +14,13 @@ export default StyleSheet.create({
     borderColor: "rgb(27,74,255)",
     alignContent: "center",
     justifyContent: "center",
-    height: "50%",
+    //height: "80%",
   },
   title: {
     color: "rgb(10,73,205)",
     fontSize: 30,
     fontFamily: "monospace",
-    fontWeight: "600",
+    fontWeight: "500",
     alignSelf: "center",
     fontWeight: "bold",
   },
@@ -43,10 +43,24 @@ export default StyleSheet.create({
   button: {
     alignItems: "center",
     justifyContent: "center",
+    alignSelf: "center",
     paddingVertical: 10,
     borderRadius: 20,
     elevation: 2,
     backgroundColor: "rgb(15,50,117)",
+    width: "90%",
+    paddingBottom: 5,
+  },
+  secondButton: {
+    alignItems: "center",
+    justifyContent: "center",
+    alignSelf: "center",
+    paddingVertical: 10,
+    borderRadius: 20,
+    elevation: 2,
+    backgroundColor: "rgb(102, 180, 107)",
+    width: "90%",
+    paddingBottom: 5,
   },
   text: {
     fontSize: 16,
@@ -54,6 +68,5 @@ export default StyleSheet.create({
     fontWeight: "bold",
     letterSpacing: 0.25,
     color: "white",
-    fontFamily: "Helvetica",
   },
 });

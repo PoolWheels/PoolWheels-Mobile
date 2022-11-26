@@ -9,7 +9,13 @@ import styles  from "../styles/hometrav-user"
 export default function HomeTravelerUser() {
     const [trips, setTrips] = useState(saveTrips);    
     const width = Dimensions.get("screen").width;
-    
+
+    const deleteTripUser = async(idTrip) => {
+      setTrips(await deleteTrip(idTrip));
+      alert(" VIAJE ELIMINADO " );
+    };
+
+
     return (
       <View style={styles.container}>
         <StatusBar hidden />
@@ -31,12 +37,14 @@ export default function HomeTravelerUser() {
                 }}
               >
                 <TripUserTraveler
+                  id={item.id}
                   index={index}
                   addrInit={item.addrInit}
                   availableSeats={item.availableSeats}
                   initTime={item.initTime}
                   stops={item.stops}
-                  contentButton={"Eliminar Viaje"}
+                  contentButton={"ELIMINAR"}
+                  functionOne = {deleteTripUser}
                   secondButton={true}
                   contentSecondButton={"PAGAR"}
                 ></TripUserTraveler>
