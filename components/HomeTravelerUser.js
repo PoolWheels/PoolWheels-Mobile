@@ -1,7 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { React, useState, useRef} from "react";
-import { Text, View, FlatList, Dimensions, Animated } from "react-native";
-import { Button } from "react-native-elements";
+import { Text, View, FlatList, Dimensions, Animated, Alert, Pressable } from "react-native";
 import { saveTrips, deleteTrip } from "../utils/data";
 import TripUserTraveler from "./TripUserTraveler";
 import styles  from "../styles/hometrav-user"
@@ -12,7 +11,7 @@ export default function HomeTravelerUser() {
 
     const deleteTripUser = async(idTrip) => {
       setTrips(await deleteTrip(idTrip));
-      //alert(" VIAJE ELIMINADO " );
+      Alert.alert(" ELIMINADO ", " Ya no haces parte de este viaje.");
     };
 
 
@@ -55,7 +54,9 @@ export default function HomeTravelerUser() {
           }}
         ></FlatList>
         <Text> </Text>
-        <Button title={"AGREGAR VIAJE"}></Button>
+        <Pressable style={styles.button}>
+          <Text style={styles.text}> AGREGAR VIAJE </Text>
+        </Pressable>
         <Text> </Text>
         <Text> </Text>
       </View>

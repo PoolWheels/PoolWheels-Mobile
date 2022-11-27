@@ -14,5 +14,23 @@ export default StyleSheet.create({
     fontWeight: "800",
     fontWeight: "bold",
   },
+  button: {
+    alignItems: "center",
+    justifyContent: "center",
+    alignSelf: "center",
+    paddingVertical: 10,
+    borderRadius: 10,
+    elevation: 5,
+    backgroundColor: "rgb(10,210,117)",
+    width: "90%",
+    paddingBottom: 10,
+  },
+  text: {
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: "bold",
+    letterSpacing: 0.35,
+    color: "white",
+  },
 });
 

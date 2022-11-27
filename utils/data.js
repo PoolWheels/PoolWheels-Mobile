@@ -101,27 +101,31 @@ const newActiveTrip = (trip) =>{
   return activeTrips;
 }
 
-const newTrip = (trip) => {
-    saveTrips.push(trip);
-    deleteTrip(trip);
-    return saveTrips;    
+const newSaveTrip = (idTrip) => {
+  for (let i = 0; i < activeTrips.length; i++) {
+    if (activeTrips[i].id === idTrip) {
+      //Save trip
+      saveTrips.push(activeTrips[i]);
+      //Delete from the active trips
+      activeTrips.splice(i, 1);
+      return activeTrips;
+    }
+  }   
 }
 
 const deleteTrip = async  (idTrip) => {
   for (let i = 0; i < saveTrips.length; i++){
     if (saveTrips[i].id === idTrip){
-      //newActiveTrip(saveTrips[i]);
-      const trip = saveTrips.splice(i, 1);
+      newActiveTrip(saveTrips[i]);
+      saveTrips.splice(i, 1);
       return saveTrips;
     } 
-    
   }
-  return saveTrips
 }
 
 export  {
   saveTrips,
   activeTrips,
-  newTrip,
+  newSaveTrip,
   deleteTrip,
 };
