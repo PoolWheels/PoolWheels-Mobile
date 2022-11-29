@@ -4,13 +4,17 @@ import { paymethodsuser} from "../utils/data";
 import { Text, View} from "react-native";
 import styles  from "../styles/Paymethod-style.js"
 
-export default function NewTripView() {
+export default function NewpaymethodsView() {
+    const [newpaymeths, setnewpaymeths] = useState(paymethodsuser);
+    const width = Dimensions.get("screen").width;
 
-    
 
     return (
-        <View>
-          <Text style={styles.title}>new pay method</Text>
+        <View style={styles.container}>
+            <StatusBar style="light" />
+            <View>
+                <Text style={styles.title}>new pay method</Text>
+            </View>
         </View>
     );
 
