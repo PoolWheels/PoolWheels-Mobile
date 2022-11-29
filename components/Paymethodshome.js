@@ -9,6 +9,10 @@ export default function Paymethodshome() {
     const [paymeths, setpaymeths] = useState(paymethodsuser);
     const width = Dimensions.get("screen").width;
 
+    const deletepaymethod = async(idpaymeth) => {
+        setTrips(await deleteTrip(idpaymeth));
+        Alert.alert(" Eliminado ", " se elimino el metodo de pago.");
+      };
 
     return (
         <View style={styles.container}>
