@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import Pregunta from "./Pregunta";
 import data from "../utils/preguntasData";
+import comentariosData from "../utils/comentariosData";
 
 const Soporte = (props) => {
   return (
@@ -47,10 +48,10 @@ const Soporte = (props) => {
       <FlatList
         style={{ paddingVertical: 10, marginBottom: 10 }}
         horizontal
-        data={data.preguntas}
-        keyExtractor={(item) => item.pregunta}
+        data={comentariosData.comentarios}
+        keyExtractor={(item) => item.comentario}
         renderItem={({ item }) => (
-          <Pregunta pregunta={item.pregunta} respuesta={item.respuesta} />
+          <Pregunta pregunta={item.comentario} respuesta={item.fecha} />
         )}
       />
     </ScrollView>

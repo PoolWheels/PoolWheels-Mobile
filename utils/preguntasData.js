@@ -22,8 +22,10 @@ export default {
         "Nuestra aplicación permite que carros y motos puedan prestar el servicio de transporte",
     },
     {
-      pregunta: "¿Qué vehiculos pueden prestar el seraaaaaaaaaaaa?",
-      respuesta: "Los carros y motos pueden prestar servicio en Pool Wheels",
+      pregunta:
+        "¿En qué ciudades está disponible el servicio de su aplicación?",
+      respuesta:
+        "Actualmente Pool Wheels solo está operando en la ciudad de Bogotá",
     },
   ],
 };
