@@ -27,3 +27,8 @@ const paymethodsuser = [
       },
     
   ];
+
+
+  export  {
+    paymethodsuser,
+  };

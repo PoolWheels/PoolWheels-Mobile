@@ -16,15 +16,14 @@ export default function Paymethod(props) {
 
     return (
       <View style={styles.trip}>
-        <Text style={styles.title}> Metodo de pago #{props.index + 1}</Text>
+        <Text style={styles.title}>  #{props.index + 1}</Text>
         <Text>
 
         </Text>
         <Modal animationType="slide" transparent={true} visible={modalVisible}
           onRequestClose={() => {
             setModalVisible(!modalVisible);
-          }}
-        >
+          }} >
           <View style={stylesModal.centeredView}>
             <View style={stylesModal.modalView}>
               <Text style={stylesModal.modalText}>

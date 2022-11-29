@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { Text, View, Dimensions, FlatList, Animated, Alert, Pressable} from "react-native";
 import styles  from "../styles/Paymethod-style.js"
-import { paymethodsuser} from "../utils/data";
+import { paymethodsuser} from "../utils/dataPM";
 import { React, useState, useRef} from "react";
 import Paymethod from "./Paymethod.js";
 
@@ -11,7 +11,7 @@ export default function Paymethodshome() {
     const width = Dimensions.get("screen").width;
 
     const deletepaymethod = async(idpaymeth) => {
-        setTrips(await deleteTrip(idpaymeth));
+        setpaymeths(await deleteTrip(idpaymeth));
         Alert.alert(" Eliminado ", " se elimino el metodo de pago.");
       };
 
@@ -21,6 +21,12 @@ export default function Paymethodshome() {
         <View>
           <Text style={styles.title}>🪙 Estos son tus metodos de pago 🏦</Text>
         </View>
+
+        
+        <Text>
+        </Text>
+
+
         <FlatList
           data={paymeths}
           keyExtractor={(_, index) => index}
@@ -39,7 +45,7 @@ export default function Paymethodshome() {
                   expirationDate={item.expirationDate}
                   index={index}
                   contentButton={"ELIMINAR"}
-                  functionOne={deleteTripUser}
+                  functionOne={Paymethod}
                 ></Paymethod>
               </View>
             );

@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { React, useState } from "react";
-import { paymethodsuser} from "../utils/data";
+import { paymethodsuser} from "../utils/dataPM";
 import { Text, View, Dimensions, Animated, Alert, Pressable} from "react-native";
 import styles  from "../styles/Paymethod-style.js"
 
