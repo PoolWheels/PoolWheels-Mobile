@@ -14,7 +14,7 @@ export default function Paymethodshome() {
         <View style={styles.container}>
         <StatusBar style="light" />
         <View>
-          <Text style={styles.title}>Paymethods pages</Text>
+          <Text style={styles.title}>🪙 Estos son tus metodos de pago 🏦</Text>
         </View>
         <FlatList
           data={paymeths}
@@ -35,8 +35,8 @@ export default function Paymethodshome() {
         <Text> 
 
         </Text>
-        <Pressable style={styles.button}>
-          <Text style={styles.text}> Add Paymethod </Text>
+        <Pressable style={styles.button} onPress={() => console.log("intentando crear nuevo paymethod")} >
+          <Text style={styles.text}>    💳 Agregar Nuevo metodo de pago   </Text>
         </Pressable>
         <Text> 
 
