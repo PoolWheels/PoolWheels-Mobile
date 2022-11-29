@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { Text, View, Dimensions} from "react-native";
+import { Text, View, Dimensions, FlatList, Animated, Alert, Pressable} from "react-native";
 import styles  from "../styles/Paymethod-style.js"
 import { paymethodsuser} from "../utils/data";
 import { React, useState, useRef} from "react";
@@ -12,11 +12,39 @@ export default function Paymethodshome() {
 
     return (
         <View style={styles.container}>
-            <StatusBar style="light" />
-            <View>
-                <Text style={styles.title}>Your PayMethods</Text>
-            </View>
+        <StatusBar style="light" />
+        <View>
+          <Text style={styles.title}>Paymethods pages</Text>
         </View>
+        <FlatList
+          data={paymeths}
+          keyExtractor={(_, index) => index}
+          horizontal={true}
+          pagingEnabled
+          showsHorizontalScrollIndicator={true}
+          renderItem={({ item, index }) => {
+            return (
+              <View style={{ width, ustifyContent: "center", alignItems: "center", }}>
+                
+              </View>
+            );
+          }}
+        >
+
+        </FlatList>
+        <Text> 
+
+        </Text>
+        <Pressable style={styles.button}>
+          <Text style={styles.text}> Add Paymethod </Text>
+        </Pressable>
+        <Text> 
+
+        </Text>
+        <Text> 
+
+        </Text>
+      </View>
     )
       
 };
