@@ -22,7 +22,7 @@ export default function Paymethodshome() {
           <Text style={styles.title}>🪙 Estos son tus metodos de pago 🏦</Text>
         </View>
 
-        
+
         <Text>
         </Text>
 
@@ -35,7 +35,7 @@ export default function Paymethodshome() {
           showsHorizontalScrollIndicator={true}
           renderItem={({ item, index }) => {
             return (
-              <View style={{ width, ustifyContent: "center", alignItems: "center", }}>
+              <View style={{ width, ustifyContent: "center", alignItems: "center",}}>
                 <Paymethod
                   id={item.id}
                   owner={item.owner}

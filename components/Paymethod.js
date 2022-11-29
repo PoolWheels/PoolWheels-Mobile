@@ -20,27 +20,28 @@ export default function Paymethod(props) {
         <Text>
 
         </Text>
-        <Modal animationType="slide" transparent={true} visible={modalVisible}
-          onRequestClose={() => {
-            setModalVisible(!modalVisible);
-          }} >
-          <View style={stylesModal.centeredView}>
-            <View style={stylesModal.modalView}>
-              <Text style={stylesModal.modalText}>
-                👤 Dueño {props.owner}
+        
+          <View >
+            <View >
+              <Text >
+                👤 Dueño: {props.owner}
               </Text>
               <Text style={stylesModal.modalText }>
                 Typo de metodo de pago: {props.type}
               </Text>
               <Text style={stylesModal.modalText}>
-              🔢 numero de metodo de pago{props.number}
+              🔢 numero de metodo de pago:{props.number}
               </Text>
               <Text style={stylesModal.modalText}>
-              🏦 Banco {props.bank}
+              🏦 Banco: {props.bank}
               </Text>
               <Text style={stylesModal.modalText}>
               📆 Fecha de Expiración: {props.expirationDate}
               </Text>
+              <Text>
+
+              </Text>
+
               <Pressable
                 style={[stylesModal.button, stylesModal.buttonClose]}
                 onPress={() => setModalVisible(!modalVisible)}
@@ -49,9 +50,6 @@ export default function Paymethod(props) {
               </Pressable>
             </View>
           </View>
-        </Modal>
-        <Text>
-        </Text>
         <Pressable style={styles.button} onPress={(e) => {
             props.functionOne(props.id);
           }} content={props.contentButton}>

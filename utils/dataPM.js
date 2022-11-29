@@ -28,6 +28,32 @@ const paymethodsuser = [
     
   ];
 
+  const newActiveTrip = (trip) =>{
+    activeTrips.push(trip);
+    return activeTrips;
+  }
+
+  const newSavepaymeth = (idTrip) => {
+    for (let i = 0; i < activeTrips.length; i++) {
+      if (activeTrips[i].id === idTrip) {
+        //Save trip
+        saveTrips.push(activeTrips[i]);
+        //Delete from the active trips
+        activeTrips.splice(i, 1);
+        return activeTrips;
+      }
+    }   
+  }
+  
+  const deleteTrip = async  (idTrip) => {
+    for (let i = 0; i < saveTrips.length; i++){
+      if (saveTrips[i].id === idTrip){
+        newActiveTrip(saveTrips[i]);
+        saveTrips.splice(i, 1);
+        return saveTrips;
+      } 
+    }
+  }
 
   export  {
     paymethodsuser,
