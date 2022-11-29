@@ -18,6 +18,11 @@ export default function Paymethodshome() {
     return (
         <View style={styles.container}>
         <StatusBar style="light" />
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
         <View>
           <Text style={styles.title}>🪙 Estos son tus metodos de pago 🏦</Text>
         </View>
@@ -25,46 +30,43 @@ export default function Paymethodshome() {
 
         <Text>
         </Text>
-
-
-        <FlatList
-          data={paymeths}
-          keyExtractor={(_, index) => index}
-          horizontal={true}
-          pagingEnabled
-          showsHorizontalScrollIndicator={true}
-          renderItem={({ item, index }) => {
-            return (
-              <View style={{ width, ustifyContent: "center", alignItems: "center",}}>
-                <Paymethod
-                  id={item.id}
-                  owner={item.owner}
-                  number={item.number}
-                  type={item.type}
-                  bank={item.bank}
-                  expirationDate={item.expirationDate}
-                  index={index}
-                  contentButton={"ELIMINAR"}
-                  functionOne={Paymethod}
-                ></Paymethod>
-              </View>
-            );
-          }}
-        >
-
-        </FlatList>
-        <Text> 
-
-        </Text>
         <Pressable style={styles.button} onPress={() => console.log(paymeths)} >
-          <Text style={styles.text}>    💳 Agregar Nuevo metodo de pago   </Text>
+            <Text style={styles.text}>    💳 Agregar Nuevo metodo de pago   </Text>
         </Pressable>
-        <Text> 
-
+        <Text>
         </Text>
-        <Text> 
 
-        </Text>
+        <View style={{  height: '85%'}}>
+            <FlatList
+            data={paymeths}
+            keyExtractor={(_, index) => index}
+            horizontal={true}
+            pagingEnabled
+            showsHorizontalScrollIndicator={true}
+            renderItem={({ item, index }) => {
+                return (
+                <View style={{ width, ustifyContent: "center", alignItems: "center"}}>
+                    <Paymethod
+                    id={item.id}
+                    owner={item.owner}
+                    number={item.number}
+                    type={item.type}
+                    bank={item.bank}
+                    expirationDate={item.expirationDate}
+                    index={index}
+                    contentButton={"ELIMINAR"}
+                    functionOne={Paymethod}
+                    ></Paymethod>
+                </View>
+                );
+            }}
+            >
+
+            </FlatList>
+            <Text></Text>
+
+            
+        </View>
       </View>
     )
       

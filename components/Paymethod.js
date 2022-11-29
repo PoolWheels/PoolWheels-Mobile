@@ -26,6 +26,7 @@ export default function Paymethod(props) {
               <Text >
                 👤 Dueño: {props.owner}
               </Text>
+              <Text></Text>
               <Text style={stylesModal.modalText }>
                 Typo de metodo de pago: {props.type}
               </Text>
@@ -38,18 +39,9 @@ export default function Paymethod(props) {
               <Text style={stylesModal.modalText}>
               📆 Fecha de Expiración: {props.expirationDate}
               </Text>
-              <Text>
+              <Text></Text>
 
-              </Text>
-
-              <Pressable
-                style={[stylesModal.button, stylesModal.buttonClose]}
-                onPress={() => setModalVisible(!modalVisible)}
-              >
-                <Text style={stylesModal.textStyle}> X </Text>
-              </Pressable>
-            </View>
-          </View>
+            </View></View>
         <Pressable style={styles.button} onPress={(e) => {
             props.functionOne(props.id);
           }} content={props.contentButton}>
