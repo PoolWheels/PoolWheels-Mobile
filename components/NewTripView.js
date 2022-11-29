@@ -5,7 +5,7 @@ import { activeTrips, newSaveTrip } from "../utils/data";
 import TripUserTraveler from "./TripUserTraveler";
 import styles from "../styles/hometrav-user";
 
-export default function NewTripView() {
+export default function NewTripView(props) {
     const width = Dimensions.get("screen").width;
     const [trips, setActiveTrips] = useState(activeTrips);    
 
@@ -54,7 +54,7 @@ export default function NewTripView() {
         <Text> </Text>
         <Pressable
           style={styles.button}
-          onPress={() => console.log("Hola")}
+          onPress={() => props.navigation.navigate('HomeTravelerUser')}
         >
           <Text style={styles.text}>     REGRESAR    </Text>
         </Pressable>
