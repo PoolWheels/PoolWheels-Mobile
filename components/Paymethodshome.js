@@ -3,6 +3,7 @@ import { Text, View, Dimensions, FlatList, Animated, Alert, Pressable} from "rea
 import styles  from "../styles/Paymethod-style.js"
 import { paymethodsuser} from "../utils/data";
 import { React, useState, useRef} from "react";
+import Paymethod from "./Paymethod.js";
 
 export default function Paymethodshome() {
 
@@ -29,7 +30,17 @@ export default function Paymethodshome() {
           renderItem={({ item, index }) => {
             return (
               <View style={{ width, ustifyContent: "center", alignItems: "center", }}>
-                
+                <Paymethod
+                  id={item.id}
+                  owner={item.owner}
+                  number={item.number}
+                  type={item.type}
+                  bank={item.bank}
+                  expirationDate={item.expirationDate}
+                  index={index}
+                  contentButton={"ELIMINAR"}
+                  functionOne={deleteTripUser}
+                ></Paymethod>
               </View>
             );
           }}
@@ -39,7 +50,7 @@ export default function Paymethodshome() {
         <Text> 
 
         </Text>
-        <Pressable style={styles.button} onPress={() => console.log("intentando crear nuevo paymethod")} >
+        <Pressable style={styles.button} onPress={() => console.log(paymeths)} >
           <Text style={styles.text}>    💳 Agregar Nuevo metodo de pago   </Text>
         </Pressable>
         <Text> 
