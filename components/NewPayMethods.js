@@ -10,7 +10,7 @@ export default function NewpaymethodsView(props) {
 
 
     return (
-        <View>
+        <View style={styles.container}>
         <StatusBar style="light" />
         <View>
           <Text style={styles.title}>Agregar nuevo Metodo de pago 🛒</Text>

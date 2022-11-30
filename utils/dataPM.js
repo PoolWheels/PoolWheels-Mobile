@@ -45,9 +45,9 @@ const paymethodsuser = [
     }   
   }
   
-  const deleteTrip = async  (idTrip) => {
+  const deleteTrip = async  (idpaymeths) => {
     for (let i = 0; i < saveTrips.length; i++){
-      if (saveTrips[i].id === idTrip){
+      if (saveTrips[i].id === idpaymeths){
         newActiveTrip(saveTrips[i]);
         saveTrips.splice(i, 1);
         return saveTrips;
@@ -57,4 +57,5 @@ const paymethodsuser = [
 
   export  {
     paymethodsuser,
+    deleteTrip,
   };

@@ -56,7 +56,7 @@ export default function Paymethodshome(props) {
                     expirationDate={item.expirationDate}
                     index={index}
                     contentButton={"ELIMINAR"}
-                    functionOne={Paymethod}
+                    functionOne={deletepaymethod}
                     ></Paymethod>
                 </View>
                 );
