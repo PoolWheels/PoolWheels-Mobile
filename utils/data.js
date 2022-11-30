@@ -113,11 +113,11 @@ const newSaveTrip = (idTrip) => {
   }   
 }
 
-const deleteTrip = async  (idTrip) => {
+const deleteTrip = async (idTrip) => {
   for (let i = 0; i < saveTrips.length; i++){
     if (saveTrips[i].id === idTrip){
+      saveTrips.splice(i, 1);      
       newActiveTrip(saveTrips[i]);
-      saveTrips.splice(i, 1);
       return saveTrips;
     } 
   }

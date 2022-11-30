@@ -6,14 +6,13 @@ import TripUserTraveler from "./TripUserTraveler";
 import styles  from "../styles/hometrav-user"
 
 export default function HomeTravelerUser(props) {
-    const [trips, setTrips] = useState(saveTrips);    
+    const [trips, setTrips] = useState(saveTrips);  
     const width = Dimensions.get("screen").width;
-
-    const deleteTripUser = async(idTrip) => {
-      setTrips(await deleteTrip(idTrip));
+    
+    const deleteTripUser = async (idTrip) => {
       Alert.alert(" ELIMINADO ", " Ya no haces parte de este viaje.");
+      setTrips(await deleteTrip(idTrip));
     };
-
 
     return (
       <View style={styles.container}>
@@ -26,6 +25,7 @@ export default function HomeTravelerUser(props) {
           keyExtractor={(_, index) => index}
           horizontal={true}
           pagingEnabled
+          extraData={trips}
           showsHorizontalScrollIndicator={true}
           renderItem={({ item, index }) => {
             return (

@@ -32,5 +32,15 @@ export default StyleSheet.create({
     letterSpacing: 0.35,
     color: "white",
   },
+  secondButton: {
+    borderRadius: 10,
+    padding: 10,
+    elevation: 4,
+    alignItems: "center",
+    justifyContent: "center",
+    alignSelf: "center",
+    backgroundColor: "grey",
+    marginBottom: 6,
+  },
 });
 
