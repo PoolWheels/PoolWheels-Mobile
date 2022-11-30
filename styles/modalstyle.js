@@ -47,7 +47,6 @@ export default StyleSheet.create({
     fontFamily: "monospace",
   },
   modalText: {
-    
     marginBottom: 15,
     textAlign: "center",
     fontFamily: "monospace",
