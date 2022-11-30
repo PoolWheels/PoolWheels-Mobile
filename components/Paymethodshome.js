@@ -5,7 +5,7 @@ import { paymethodsuser} from "../utils/dataPM";
 import { React, useState, useRef} from "react";
 import Paymethod from "./Paymethod.js";
 
-export default function Paymethodshome() {
+export default function Paymethodshome(props) {
 
     const [paymeths, setpaymeths] = useState(paymethodsuser);
     const width = Dimensions.get("screen").width;
@@ -30,7 +30,8 @@ export default function Paymethodshome() {
 
         <Text>
         </Text>
-        <Pressable style={styles.button} onPress={() => console.log(paymeths)} >
+        <Pressable style={styles.button} 
+        onPress={() => props.navigation.navigate("Agregar Metodo de Pago")} >
             <Text style={styles.text}>    💳 Agregar Nuevo metodo de pago   </Text>
         </Pressable>
         <Text>
