@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import {
   View,
   StyleSheet,
@@ -16,17 +16,31 @@ import comentariosData from "../utils/comentariosData";
 import Comentario from "./Comentario";
 
 const Soporte = () => {
-  const [comentarios, setComentarios] = React.useState(comentariosData);
-  const [nuevoComentario, setNuevoComentario] = React.useState("");
+  const [comentarios, setComentarios] = useState(comentariosData.comentarios);
+  const [nuevoComentario, setNuevoComentario] = useState("");
 
   function handleSubmit() {
-    Alert.alert("Enviado!");
+    Alert.alert("Tu comentario ha sido enviado 😊");
+    const time = Date.now();
+    const date = new Date(time);
+    setComentarios((prevArray) => {
+      const newArray = [
+        ...prevArray,
+        { comentario: nuevoComentario, fecha: date.toLocaleDateString() },
+      ];
+      setComentarios(newArray);
+    });
+    setNuevoComentario("");
   }
 
   return (
-    <ScrollView nestedScrollEnabled={true} vertical style={{ flex: 1 }}>
-      <Text style={styles.title}>Soporte y Preguntas frecuentes</Text>
-      <Text style={styles.text}>
+    <ScrollView
+      nestedScrollEnabled={true}
+      vertical
+      style={{ flex: 1, paddingHorizontal: 10 }}
+    >
+      {/* <Text style={styles.title}>Soporte y Preguntas frecuentes</Text> */}
+      <Text style={styles.title}>
         Te damos la bienvenida al servicio de soporte de Pool Wheels!
       </Text>
       <View style={{ alignItems: "center", marginVertical: 30 }}>
@@ -59,7 +73,7 @@ const Soporte = () => {
       <FlatList
         style={{ paddingVertical: 10, marginBottom: 10 }}
         horizontal
-        data={comentarios.comentarios}
+        data={comentarios}
         keyExtractor={(item) => item.comentario}
         renderItem={({ item }) => (
           <Comentario comentario={item.comentario} fecha={item.fecha} />
@@ -84,9 +98,9 @@ const Soporte = () => {
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 30,
+    fontSize: 26,
     fontWeight: "bold",
-    marginBottom: 15,
+    marginVertical: 15,
     color: "#0086ff",
   },
   subtitle: {
