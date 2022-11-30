@@ -1,6 +1,5 @@
 import React from 'react'
-import Constants from 'expo-constants'
-import { View, Text, FlatList, Button, Alert } from 'react-native'
+import { View, Text, FlatList, Button } from 'react-native'
 import {trips} from '../utils/dataTrips'
 
 export default function HomeUserDriver(props) {
@@ -18,6 +17,7 @@ export default function HomeUserDriver(props) {
         <View>
             <FlatList
                 data={trips}
+                keyExtractor={ item => item.id }
                 renderItem={({item : trip}) => (
                     <View>
                         <Text>Punto de partida: {trip.addrInit}</Text>

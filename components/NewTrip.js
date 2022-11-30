@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import Constants from 'expo-constants'
 import { View, Text, TextInput, Button, Alert } from 'react-native'
 import { SelectList } from 'react-native-dropdown-select-list'
 import { trips, saveNewTrip } from '../utils/dataTrips'
