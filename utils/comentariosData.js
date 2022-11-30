@@ -16,5 +16,17 @@ export default {
       comentario: "Gran aplicación!",
       fecha: "29/11/2022",
     },
+    {
+      comentario: "Muy buena atención",
+      fecha: "29/11/2022",
+    },
+    {
+      comentario: "Buena aplicación 👍",
+      fecha: "29/11/2022",
+    },
+    {
+      comentario: "Una experiencia de viaje muy comoda y segura",
+      fecha: "29/11/2022",
+    },
   ],
 };

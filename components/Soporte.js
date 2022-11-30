@@ -6,12 +6,23 @@ import {
   Image,
   FlatList,
   ScrollView,
+  TextInput,
+  Button,
+  Alert,
 } from "react-native";
 import Pregunta from "./Pregunta";
 import data from "../utils/preguntasData";
 import comentariosData from "../utils/comentariosData";
+import Comentario from "./Comentario";
 
-const Soporte = (props) => {
+const Soporte = () => {
+  const [comentarios, setComentarios] = React.useState(comentariosData);
+  const [nuevoComentario, setNuevoComentario] = React.useState("");
+
+  function handleSubmit() {
+    Alert.alert("Enviado!");
+  }
+
   return (
     <ScrollView nestedScrollEnabled={true} vertical style={{ flex: 1 }}>
       <Text style={styles.title}>Soporte y Preguntas frecuentes</Text>
@@ -48,12 +59,25 @@ const Soporte = (props) => {
       <FlatList
         style={{ paddingVertical: 10, marginBottom: 10 }}
         horizontal
-        data={comentariosData.comentarios}
+        data={comentarios.comentarios}
         keyExtractor={(item) => item.comentario}
         renderItem={({ item }) => (
-          <Pregunta pregunta={item.comentario} respuesta={item.fecha} />
+          <Comentario comentario={item.comentario} fecha={item.fecha} />
         )}
       />
+      <Text style={styles.subtitle}>Registra un comentario!</Text>
+      <View style={{ marginBottom: 30 }}>
+        <Text style={styles.text2}>Nuevo comentario:</Text>
+        <TextInput
+          style={styles.input}
+          value={nuevoComentario}
+          onChangeText={(text) => {
+            setNuevoComentario(text);
+          }}
+          placeholder="Ingrese el texto"
+        />
+        <Button title="Enviar" onPress={handleSubmit} />
+      </View>
     </ScrollView>
   );
 };
@@ -82,6 +106,13 @@ const styles = StyleSheet.create({
     textAlign: "left",
     fontSize: 15,
     fontWeight: "bold",
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: "grey",
+    borderRadius: 5,
+    padding: 5,
+    marginVertical: 15,
   },
 });
 
