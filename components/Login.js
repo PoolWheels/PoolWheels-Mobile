@@ -10,7 +10,7 @@ const Login = ({ navigation }) => {
   const [password, setPassword] = useState(null);
 
   const redirect = () => {
-    navigation.navigate("Ejemplo");
+    navigation.navigate("HomeTravelerUser");
   };
 
   return (
