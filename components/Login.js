@@ -14,7 +14,7 @@ const Login = ({ navigation }) => {
 
   const redirect = () => {
     if (isEnabled) {
-      navigation.navigate("HomeUserDriver");
+      navigation.navigate("HomeDriverUser");
     } else {
       navigation.navigate("HomeTravelerUser");
     }
@@ -91,3 +91,4 @@ const styles = StyleSheet.create({
 });
 
 export default Login;
+// export

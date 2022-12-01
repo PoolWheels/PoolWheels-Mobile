@@ -26,7 +26,11 @@ const Soporte = () => {
     setComentarios((prevArray) => {
       const newArray = [
         ...prevArray,
-        { comentario: nuevoComentario, fecha: date.toLocaleDateString() },
+        {
+          id: prevArray.length + 1,
+          comentario: nuevoComentario,
+          fecha: date.toLocaleDateString(),
+        },
       ];
       setComentarios(newArray);
     });
@@ -39,7 +43,6 @@ const Soporte = () => {
       vertical
       style={{ flex: 1, paddingHorizontal: 10 }}
     >
-      {/* <Text style={styles.title}>Soporte y Preguntas frecuentes</Text> */}
       <Text style={styles.title}>
         Te damos la bienvenida al servicio de soporte de Pool Wheels!
       </Text>
@@ -74,7 +77,7 @@ const Soporte = () => {
         style={{ paddingVertical: 10, marginBottom: 10 }}
         horizontal
         data={comentarios}
-        keyExtractor={(item) => item.comentario}
+        keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <Comentario comentario={item.comentario} fecha={item.fecha} />
         )}

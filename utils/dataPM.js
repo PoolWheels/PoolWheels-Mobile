@@ -36,9 +36,13 @@ const paymethodsuser = [
   const newSavepaymeth = (idTrip) => {
     for (let i = 0; i < activeTrips.length; i++) {
       if (activeTrips[i].id === idTrip) {
+<<<<<<< HEAD
         //Save trip
         saveTrips.push(activeTrips[i]);
         //Delete from the active trips
+=======
+        saveTrips.push(activeTrips[i]);
+>>>>>>> 539556147275db4b7ed8bc12437ea7c276f97117
         activeTrips.splice(i, 1);
         return activeTrips;
       }

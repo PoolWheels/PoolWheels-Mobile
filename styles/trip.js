@@ -14,6 +14,10 @@ export default StyleSheet.create({
     borderColor: "rgb(27,74,255)",
     alignContent: "center",
     justifyContent: "center",
+<<<<<<< HEAD
+=======
+    //height: "80%",
+>>>>>>> 539556147275db4b7ed8bc12437ea7c276f97117
   },
   title: {
     color: "rgb(10,73,205)",
@@ -24,7 +28,10 @@ export default StyleSheet.create({
     fontWeight: "bold",
   },
   subtitles: {
+<<<<<<< HEAD
     
+=======
+>>>>>>> 539556147275db4b7ed8bc12437ea7c276f97117
     fontWeight: "bold",
     fontSize: 20,
     color: "rgb(10,2,27)",
@@ -63,11 +70,19 @@ export default StyleSheet.create({
     paddingBottom: 5,
   },
   text: {
+<<<<<<< HEAD
     
+=======
+>>>>>>> 539556147275db4b7ed8bc12437ea7c276f97117
     fontSize: 16,
     lineHeight: 21,
     fontWeight: "bold",
     letterSpacing: 0.25,
     color: "white",
   },
+<<<<<<< HEAD
 });
+=======
+});
+
+>>>>>>> 539556147275db4b7ed8bc12437ea7c276f97117
