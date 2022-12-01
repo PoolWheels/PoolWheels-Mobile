@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { View, Text, TextInput, Button, Alert } from 'react-native'
 import { SelectList } from 'react-native-dropdown-select-list'
 import { trips, saveNewTrip } from '../utils/dataTrips'
+import styles from "../styles/hometrav-user";
 
 export default function NewTrip(props) {
 
@@ -10,7 +11,7 @@ export default function NewTrip(props) {
         {value: '$4000'},
         {value: '$7000'}
     ]
-// cc
+
     const [addrInit, setAddInit] = useState("");
     const [addrFin, setAddFin] = useState("");
     const [availableSeats, setAvailSeats] = useState("");
@@ -24,9 +25,9 @@ export default function NewTrip(props) {
 
     const stopsSelected = {}
     function addStops() {
-        stopsSelected[stop1] = price1;
-        stopsSelected[stop2] = price2;
-        stopsSelected[stop3] = price3;
+        stopsSelected[stop1.replace(/ /g, "_")] = price1;
+        stopsSelected[stop2.replace(/ /g, "_")] = price2;
+        stopsSelected[stop3.replace(/ /g, "_")] = price3;
     }
 
     const newTripJSON = {
@@ -41,136 +42,156 @@ export default function NewTrip(props) {
     }
 
     return (
-        <View style={{ alignItems:'center' }}>
-
-            <View style={{flexDirection: 'row', marginVertical:10, alignItems: 'center' }}>
-                <Text> Punto de partida: </Text>
-                <TextInput
-                    style={{height: 25,
-                        borderWidth: 1,
-                        paddingHorizontal: 20}}
-                    placeholder='CC Santa Fe'
-                    onChangeText={(newAdd) => {
-                        setAddInit(newAdd)
-                    }}
-                    value={addrInit}
-                />
-            </View>
-
-            <View style={{flexDirection: 'row', marginVertical:10, alignItems: 'center' }}>
-                <Text> Dirección de Destino: </Text>
-                <TextInput
-                    style={{height: 25,
-                        borderWidth: 1,
-                        paddingHorizontal: 20}}
-                    placeholder='Universidad de la Sabana'
-                    onChangeText={(newAdd) => {
-                        setAddFin(newAdd)
-                    }}
-                    value={addrFin}
-                />
-            </View>
-
-            <View style={{flexDirection: 'row', marginVertical:10, alignItems: 'center' }}>
-                <Text> Puestos Disponibles: </Text>
-                <TextInput
-                    style={{height: 25,
-                        borderWidth: 1,
-                        paddingHorizontal: 20}}
-                    placeholder='Puestos'
-                    onChangeText={(seats) => {
-                        setAvailSeats(seats)
-                    }}
-                    value={availableSeats}
-                />
-            </View>
-
-            <View style={{ marginVertical:10, alignItems: 'center' }}>
-                <Text style={{marginBottom:10}}> Paradas: </Text>
-                <View style={{ flexDirection: 'row' }}>
-                    <Text> Parada 1: </Text>
-                    <TextInput
-                        style={{height: 25,
-                            borderWidth: 1,
-                            paddingHorizontal: 15}}
-                        placeholder='Calle 80 con Av. 68'
-                        onChangeText={(stop1) => {
-                            setStopOne(stop1.replace(/ /g, '_'))
-                        }}
-                        value={stop1}
-                    />
-                    <Text> Precio: </Text>
-                    <SelectList
-                        setSelected={(val) => setPriceOne(val)}
-                        data={prices}
-                        placeholder='$2000'
-                    />
-                </View>
-
-                <View style={{ flexDirection: 'row' }}>
-                    <Text> Parada 2: </Text>
-                    <TextInput
-                        style={{height: 25,
-                            borderWidth: 1,
-                            paddingHorizontal: 15}}
-                        placeholder='Calle 80 con Av. 68'
-                        onChangeText={(stop2) => {
-                            setStopTwo(stop2.replace(/ /g, '_'))
-                        }}
-                        value={stop2}
-                    />
-                    <Text> Precio: </Text>
-                    <SelectList
-                        setSelected={(val) => setPriceTwo(val)}
-                        data={prices}
-                        placeholder='$2000'
-                    />
-                </View>
-
-                <View style={{ flexDirection: 'row' }}>
-                    <Text> Parada 3: </Text>
-                    <TextInput
-                        style={{height: 25,
-                            borderWidth: 1,
-                            paddingHorizontal: 15}}
-                        placeholder='Calle 80 con Av. 68'
-                        onChangeText={(stop3) => {
-                            setStopThree(stop3.replace(/ /g, '_'))
-                        }}
-                        value={stop3}
-                    />
-                    <Text> Precio: </Text>
-                    <SelectList
-                        setSelected={(val) => setPriceThree(val)}
-                        data={prices}
-                        placeholder='$2000'
-                    />
-                </View>
-            </View>
-
-            <View style={{flexDirection: 'row', marginVertical:10, alignItems: 'center' }}>
-                <Text> Hora de salida: </Text>
-                <TextInput
-                    style={{height: 25,
-                        borderWidth: 1,
-                        paddingHorizontal: 20}}
-                    placeholder='13:00'
-                    onChangeText={(time) => {
-                        setFinTime(time)
-                    }}
-                    value={finTime}
-                />
-            </View>
-
-            <Button
-                title='Guardar Viaje'
-                onPress = {() => {
-                    addStops();
-                    saveNewTrip(newTripJSON);
-                    Alert.alert('Se ha agregado correctamente su viaje')
-                    props.navigation.navigate("HomeDriverUser")
-                }}
-            />
+      <View style={{ alignItems: "center" }}>
+        <View>
+          <Text style={styles.title}> Agregar nuevo viaje </Text>
         </View>
-    )
+        <View
+          style={{
+            flexDirection: "row",
+            marginVertical: 10,
+            alignItems: "center",
+          }}
+        >
+          <Text> Punto de partida: </Text>
+          <TextInput
+            style={{ height: 25, borderWidth: 1, paddingHorizontal: 20 }}
+            placeholder="CC Santa Fe"
+            onChangeText={(newAdd) => {
+              setAddInit(newAdd);
+            }}
+            value={addrInit}
+          />
+        </View>
+
+        <View
+          style={{
+            flexDirection: "row",
+            marginVertical: 10,
+            alignItems: "center",
+          }}
+        >
+          <Text> Dirección de Destino: </Text>
+          <TextInput
+            style={{ height: 25, borderWidth: 1, paddingHorizontal: 20 }}
+            placeholder="Universidad de la Sabana"
+            onChangeText={(newAdd) => {
+              setAddFin(newAdd);
+            }}
+            value={addrFin}
+          />
+        </View>
+
+        <View
+          style={{
+            flexDirection: "row",
+            marginVertical: 10,
+            alignItems: "center",
+          }}
+        >
+          <Text> Puestos Disponibles: </Text>
+          <TextInput
+            style={{ height: 25, borderWidth: 1, paddingHorizontal: 20 }}
+            placeholder="Puestos"
+            onChangeText={(seats) => {
+              setAvailSeats(seats);
+            }}
+            value={availableSeats}
+          />
+        </View>
+
+        <View style={{ marginVertical: 10, alignItems: "center" }}>
+          <Text style={{ marginBottom: 10 }}> Paradas: </Text>
+          <View style={{ flexDirection: "row" }}>
+            <Text> Parada 1: </Text>
+            <TextInput
+              style={{ height: 25, borderWidth: 1, paddingHorizontal: 15 }}
+              placeholder="Calle 80 con Av. 68"
+              onChangeText={(stop1) => {
+                setStopOne(stop1);
+              }}
+              value={stop1}
+            />
+            <Text> Precio: </Text>
+            <SelectList
+              setSelected={(val) => setPriceOne(val)}
+              data={prices}
+              placeholder="$2000"
+            />
+          </View>
+
+          <View style={{ flexDirection: "row" }}>
+            <Text> Parada 2: </Text>
+            <TextInput
+              style={{ height: 25, borderWidth: 1, paddingHorizontal: 15 }}
+              placeholder="Calle 80 con Av. 68"
+              onChangeText={(stop2) => {
+                setStopTwo(stop2);
+              }}
+              value={stop2}
+            />
+            <Text> Precio: </Text>
+            <SelectList
+              setSelected={(val) => setPriceTwo(val)}
+              data={prices}
+              placeholder="$2000"
+            />
+          </View>
+
+          <View style={{ flexDirection: "row" }}>
+            <Text> Parada 3: </Text>
+            <TextInput
+              style={{ height: 25, borderWidth: 1, paddingHorizontal: 15 }}
+              placeholder="Calle 80 con Av. 68"
+              onChangeText={(stop3) => {
+                setStopThree(stop3);
+              }}
+              value={stop3}
+            />
+            <Text> Precio: </Text>
+            <SelectList
+              setSelected={(val) => setPriceThree(val)}
+              data={prices}
+              placeholder="$2000"
+            />
+          </View>
+        </View>
+
+        <View
+          style={{
+            flexDirection: "row",
+            marginVertical: 10,
+            alignItems: "center",
+          }}
+        >
+          <Text> Hora de salida: </Text>
+          <TextInput
+            style={{ height: 25, borderWidth: 1, paddingHorizontal: 20 }}
+            placeholder="13:00"
+            onChangeText={(time) => {
+              setFinTime(time);
+            }}
+            value={finTime}
+          />
+        </View>
+
+        <View style={{ flexDirection: "row" }}>
+          <Button
+            title="Cancelar"
+            onPress={() => {
+              props.navigation.navigate("HomeDriverUser");
+            }}
+          />
+          <Button
+            title="Guardar Viaje"
+            onPress={() => {
+              addStops();
+              saveNewTrip(newTripJSON);
+              Alert.alert("Se ha agregado correctamente su viaje");
+              props.navigation.navigate("HomeDriverUser");
+            }}
+          />
+        </View>
+      </View>
+    );
 }
