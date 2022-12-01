@@ -14,6 +14,7 @@ export default StyleSheet.create({
     borderColor: "rgb(27,74,255)",
     alignContent: "center",
     justifyContent: "center",
+    //height: "80%",
   },
   title: {
     color: "rgb(10,73,205)",
@@ -24,7 +25,6 @@ export default StyleSheet.create({
     fontWeight: "bold",
   },
   subtitles: {
-    
     fontWeight: "bold",
     fontSize: 20,
     color: "rgb(10,2,27)",
@@ -63,7 +63,6 @@ export default StyleSheet.create({
     paddingBottom: 5,
   },
   text: {
-    
     fontSize: 16,
     lineHeight: 21,
     fontWeight: "bold",
