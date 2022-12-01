@@ -14,9 +14,9 @@ const Login = ({ navigation }) => {
 
   const redirect = () => {
     if (isEnabled) {
-      navigation.navigate("HomeDriverUser");
+      navigation.navigate("LandingPage");
     } else {
-      navigation.navigate("HomeTravelerUser");
+      navigation.navigate("LandingPage");
     }
   };
 

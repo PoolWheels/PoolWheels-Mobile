@@ -1,33 +1,78 @@
-import { React, useState } from "react";
+import { React} from "react";
 import {
-    View,
     StyleSheet,
+    View,
     Text,
-    Image,
-    FlatList,
-    ScrollView,
-    TextInput,
     Button,
-    Alert,
+    Image,
   } from "react-native";
-import Contact from "../components/Contact";
+import card3 from "../assets/card3.png";
   
-
-  const LandingPage= () => {
+  export default function LandingPage (props) {
+    
+    const redir = () => {
+          props.navigation.navigate("Contact");   
+    };
    
     return (
-      <View>
-        <Text> Generar Ganancias</Text>
-        <Text> Genera ganancias por viajes realizados. Organiza tus horarios y dispone de tu tiempo.</Text>
-        <Text> Seguridad</Text>
-        <Text> Transporte colectivo en un entorno común entre estudiantes universitarios y empleados.</Text>
-        <Text> Opción de viaje</Text>
-        <Text> Pide un viaje cuando lo necesites.</Text>
-        <Button 
+      <View  style={styles.viewTotal}>
+        <View style={styles.containerCard}>
+          <Text style={styles.title}> Generar Ganancias</Text>
+          <Text style={styles.body}>Genera ganancias por viajes realizados.</Text>
+          <Text style={styles.body}>Organiza tus horarios y dispone de tu tiempo.</Text>
+        </View>
+        <View style={styles.containerCard} >
+          <Text style={styles.title}> Seguridad</Text>
+          <Text style={styles.body}> Transporte colectivo en un entorno común entre estudiantes universitarios y empleados.</Text>
+        </View>
+        <View style={styles.containerCard} >
+          <Text style={styles.title}> Opción de viaje</Text>
+          <Text style={styles.body}> Pide un viaje cuando lo necesites.</Text>
+        </View>
+        <Button
+          onPress={redir} 
           title="contactar"
-         />
+        />
+        <Text> </Text>
+         <Image source={card3} style={styles.image} />
       </View>
     );
-  }
+  };
 
-export default LandingPage;
+const styles = StyleSheet.create({
+
+  viewTotal:{
+    padding:20,
+  },
+  containerCard: {
+
+    backgroundColor: 'white',
+    borderColor: 'blue',
+    borderWidth: 3,
+    alignItems: "center",
+    justifyContent: "center",
+    marginVertical: 5,
+    
+    
+  },
+  title:{
+    fontSize: 26,
+    justifyContent: "center",
+    alignItems: "center",
+    fontWeight: 'bold',
+  },
+
+  body:{
+    fontSize: 20,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  image:{
+    height: 230,
+    width: 350,
+    // resizeMode: "contain",
+    alignItems: "center",
+  },
+
+  });

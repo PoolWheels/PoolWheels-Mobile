@@ -1,20 +1,12 @@
 import { StyleSheet } from "react-native";
 export default StyleSheet.create({
   centeredView: {
-<<<<<<< HEAD
-    
-=======
->>>>>>> 539556147275db4b7ed8bc12437ea7c276f97117
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
     marginTop: 22,
   },
   modalView: {
-<<<<<<< HEAD
-    
-=======
->>>>>>> 539556147275db4b7ed8bc12437ea7c276f97117
     margin: 20,
     backgroundColor: "white",
     borderRadius: 15,
@@ -57,9 +49,5 @@ export default StyleSheet.create({
     textAlign: "center",
     fontFamily: "monospace",
   },
-<<<<<<< HEAD
-});
-=======
 });
   
->>>>>>> 539556147275db4b7ed8bc12437ea7c276f97117

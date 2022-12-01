@@ -1,21 +1,86 @@
-import { React, useState } from "react";
-import {
-    View,
-    StyleSheet,
-    Text,
-    Image,
-    FlatList,
-    ScrollView,
-    TextInput,
-    Button,
-    Alert,
-  } from "react-native";
+import { React } from "react";
+import { TouchableOpacity } from "react-native";
+import {StyleSheet,View,Text,Image} from "react-native";
+import MapView, {Marker,Polyline} from "react-native-maps";
+import { useState } from "react";
 
-const Contact= () => {
+import gmail from "../assets/gmail.png";
+
+export default function Contact(){
+
+  const[origin,setOrigin]=useState({
+    latitude:4.783430237574415,
+    longitude:-74.04291736602323,
+  });
+
+  const[destination,setDestination]=useState({
+    latitude:4.783430237574415,
+    longitude:-74.04291736602323,
+  });
+
     return (
-       
-          <Text>Gmail</Text>
-      
+
+        <View  style={styles.viewTotal}>
+
+          <View style={styles.containerCard} >
+          <Text style={styles.title}> Ubicación</Text>
+            <MapView 
+            style={styles.map}
+            initialRegion={{
+              latitude:origin.latitude,
+              longitude:origin.longitude,
+              latitudeDelta:0.09,
+              longitudeDelta:0.04,
+            }}
+            />
+            
+          <Image source={gmail} style={styles.image} />
+          <View style={styles.containerCard} >
+            <Text style={styles.title}> Gmail</Text>
+            <Text style={styles.body}> uniwheelscompany@gmail.com</Text>
+          </View>
+          
+          </View> 
+      </View>
       );
   }
-  export default Contact;
+
+  const styles = StyleSheet.create({
+
+    viewTotal:{
+      padding:20,
+    },
+    containerCard: {
+  
+      borderWidth: 0,
+      alignItems: "center",
+      justifyContent: "center",
+      marginVertical: 5,
+      
+    },
+    title:{
+      fontSize: 26,
+      justifyContent: "center",
+      alignItems: "center",
+      fontWeight: 'bold',
+    },
+  
+    body:{
+      fontSize: 20,
+      alignItems: "center",
+      justifyContent: "center",
+    },
+  
+    image:{
+      height: 70,
+      resizeMode: "contain",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+
+    map:{
+      width:350,
+      height:450,
+    },
+  
+    });
