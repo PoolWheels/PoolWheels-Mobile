@@ -9,6 +9,8 @@ import Paymethodshome from "./components/Paymethodshome";
 import Soporte from "./components/Soporte";
 import HomeUserDriver from "./components/HomeUserDriver";
 import NewTrip from "./components/NewTrip";
+import LandingPage from "./components/LandingPage";
+import Contact from "./components/Contact";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -24,6 +26,8 @@ export default function App() {
         <Stack.Screen name="NewTripView" component={NewTripView} />
         <Stack.Screen name="HomeDriverUser" component={HomeUserDriver} />
         <Stack.Screen name="NewTripForm" component={NewTrip} />
+        <Stack.Screen name="LandingPage" component={LandingPage} />
+        <Stack.Screen name="Contact" component={Contact} />
       </Stack.Navigator>
     </NavigationContainer>
   );
