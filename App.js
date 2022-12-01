@@ -2,7 +2,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Login from "./components/Login";
-import Ejemplo from "./components/Ejemplo";
 import NewTripView from "./components/NewTripView";
 import HomeTravelerUser from "./components/HomeTravelerUser";
 import NewpaymethosView from "./components/NewpaymethosView";
@@ -18,7 +17,6 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Ejemplo1" component={Ejemplo} />
         <Stack.Screen name="Soporte" component={Soporte} />
         <Stack.Screen name="PayMethods" component={Paymethodshome} />
         <Stack.Screen name="NewPayMethods" component={NewpaymethosView} />
