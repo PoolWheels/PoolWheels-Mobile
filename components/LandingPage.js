@@ -13,9 +13,15 @@ import card3 from "../assets/card3.png";
     const redir = () => {
           props.navigation.navigate("Contact");   
     };
+    const redirLogin = () => {
+      props.navigation.navigate("Login");   
+};
    
     return (
       <View  style={styles.viewTotal}>
+        <View>
+          <Button onPress={redirLogin} title="Login" color="#3E3BC7" />
+        </View>
         <View style={styles.containerCard}>
           <Text style={styles.title}> Generar Ganancias</Text>
           <Text style={styles.body}>Genera ganancias por viajes realizados.</Text>
@@ -48,7 +54,7 @@ const styles = StyleSheet.create({
 
     backgroundColor: 'white',
     borderColor: 'blue',
-    borderWidth: 3,
+    borderWidth: 1,
     alignItems: "center",
     justifyContent: "center",
     marginVertical: 5,

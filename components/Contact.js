@@ -30,10 +30,20 @@ export default function Contact(){
               latitude:origin.latitude,
               longitude:origin.longitude,
               latitudeDelta:0.09,
-              longitudeDelta:0.04,
+              longitudeDelta:0.04
             }}
-            />
-            
+            >
+              <Marker
+                draggable
+                coordinate={origin}
+                onDragEnd={(direction) => setOrigin(direction.nativeEvent.coordinate)}
+              />
+              <Marker
+              coordinate={destination}
+              />
+
+            </MapView>
+            <Text></Text>
           <Image source={gmail} style={styles.image} />
           <View style={styles.containerCard} >
             <Text style={styles.title}> Gmail</Text>
