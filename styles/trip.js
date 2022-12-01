@@ -58,7 +58,7 @@ export default StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 20,
     elevation: 2,
-    backgroundColor: "rgb(102, 180, 107)",
+    backgroundColor: "rgb(10,210,117)",
     width: "90%",
     paddingBottom: 5,
   },
