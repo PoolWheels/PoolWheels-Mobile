@@ -101,7 +101,7 @@ const newActiveTrip = (trip) =>{
   return activeTrips;
 }
 
-const newSaveTrip = (idTrip) => {
+const newSaveTrip = async (idTrip) => {
   for (let i = 0; i < activeTrips.length; i++) {
     if (activeTrips[i].id === idTrip) {
       //Save trip

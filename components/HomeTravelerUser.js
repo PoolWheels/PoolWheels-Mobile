@@ -54,12 +54,32 @@ export default function HomeTravelerUser(props) {
           }}
         ></FlatList>
         <Text> </Text>
+
+        <Text> </Text>
+        <View style={{ flexDirection: "row" }}>
+          <Pressable
+            style={styles.buttonOption}
+            onPress={() => props.navigation.navigate("PayMethods")}
+          >
+            <Text style={styles.text}> Métodos de Pago ➜ </Text>
+          </Pressable>
+          <Pressable
+            style={styles.buttonOption}
+            onPress={() => props.navigation.navigate("Soporte")}
+          >
+            <Text style={styles.text}> Soporte y PQR ➜ </Text>
+          </Pressable>
+        </View>
+        <Text></Text>
         <Pressable
           style={styles.button}
           onPress={() => props.navigation.navigate("NewTripView")}
         >
           <Text style={styles.text}> AGREGAR VIAJE </Text>
         </Pressable>
+
+        <Text> </Text>
+
         <Text> </Text>
         <Text> </Text>
       </View>

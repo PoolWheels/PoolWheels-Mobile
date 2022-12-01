@@ -25,6 +25,14 @@ export default StyleSheet.create({
     width: "90%",
     paddingBottom: 10,
   },
+  buttonOption: {
+    paddingVertical: 10,
+    marginHorizontal: 45,
+    borderRadius: 12,
+    elevation: 5,
+    backgroundColor: "rgb(20,110,127)",
+    paddingBottom: 10,
+  },
   text: {
     fontSize: 16,
     lineHeight: 21,
