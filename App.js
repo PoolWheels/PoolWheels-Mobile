@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Login from "./components/Login";
 import NewTripView from "./components/NewTripView";
 import HomeTravelerUser from "./components/HomeTravelerUser";
-import NewpaymethosView from "./components/NewpaymethosView";
+import NewpaymethosView from "./components/NewPayMethods";
 import Paymethodshome from "./components/Paymethodshome";
 import Soporte from "./components/Soporte";
 import HomeUserDriver from "./components/HomeUserDriver";
@@ -28,4 +28,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
