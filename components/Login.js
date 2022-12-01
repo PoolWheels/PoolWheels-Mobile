@@ -1,21 +1,33 @@
 import { StatusBar } from "expo-status-bar";
 import { Button } from "react-native";
-import { StyleSheet, Text, View, TextInput, Image, Switch } from "react-native";
+import { StyleSheet, View, TextInput, Image } from "react-native";
 import { useState } from "react";
+import { verificarCredenciales, obtenerRol } from "../utils/dataUsers";
 
 import logo from "../assets/logo.png";
 
 const Login = ({ navigation }) => {
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
+  const doLogin = () => {
+    if (email === "" || password === "") {
+      alert("Se deben completar todos los campos");
+    } else {
+      if (verificarCredenciales(email, password)) {
+        redirect();
+      } else {
+        alert(
+          "Los datos ingresados no coinciden con ninguna cuenta registrada"
+        );
+      }
+    }
+  };
 
   const redirect = () => {
-    if (isEnabled) {
+    if (obtenerRol(email) === "DRIVER") {
       navigation.navigate("HomeDriverUser");
-    } else {
+    } else if (obtenerRol(email) === "TRAVELER") {
       navigation.navigate("HomeTravelerUser");
     }
   };
@@ -39,19 +51,7 @@ const Login = ({ navigation }) => {
 
       <StatusBar style="auto" />
 
-      <View style={styles.container_dos}>
-        <Text>Usuario Conductor</Text>
-
-        <Switch
-          trackColor={{ false: "#767577", true: "#3E3BC7" }}
-          thumbColor={isEnabled ? "#8C8ADE" : "#f4f3f4"}
-          ios_backgroundColor="#3e3e3e"
-          onValueChange={toggleSwitch}
-          value={isEnabled}
-        />
-      </View>
-
-      <Button onPress={redirect} title="Login" color="#3E3BC7" />
+      <Button onPress={doLogin} title="Login" color="#3E3BC7" />
     </View>
   );
 };
@@ -91,4 +91,3 @@ const styles = StyleSheet.create({
 });
 
 export default Login;
-// export
