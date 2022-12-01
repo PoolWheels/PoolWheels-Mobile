@@ -49,7 +49,7 @@ const Soporte = () => {
       <View style={{ alignItems: "center", marginVertical: 30 }}>
         <Image
           style={{ width: 250, height: 250 }}
-          source={require("../utils/faq.png")}
+          source={require("../assets/faq.png")}
         />
       </View>
       <Text style={styles.subtitle}>Preguntas frecuentes</Text>
