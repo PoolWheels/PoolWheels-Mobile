@@ -30,7 +30,7 @@ export default StyleSheet.create({
     marginHorizontal: 45,
     borderRadius: 12,
     elevation: 5,
-    backgroundColor: "rgb(20,110,127)",
+    backgroundColor: "rgb(15,50,117)",
     paddingBottom: 10,
   },
   text: {
