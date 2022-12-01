@@ -26,7 +26,11 @@ const Soporte = () => {
     setComentarios((prevArray) => {
       const newArray = [
         ...prevArray,
-        { comentario: nuevoComentario, fecha: date.toLocaleDateString() },
+        {
+          id: prevArray.length + 1,
+          comentario: nuevoComentario,
+          fecha: date.toLocaleDateString(),
+        },
       ];
       setComentarios(newArray);
     });
