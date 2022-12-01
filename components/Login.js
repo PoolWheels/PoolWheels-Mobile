@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { Button } from "react-native";
-import { StyleSheet, View, TextInput, Image } from "react-native";
+import { StyleSheet, View, TextInput, Image, Text } from "react-native";
 import { useState } from "react";
 import { verificarCredenciales, obtenerRol } from "../utils/dataUsers";
 
@@ -47,11 +47,19 @@ const Login = ({ navigation }) => {
         style={styles.input}
         onChangeText={setPassword}
         placeholder="Contraseña"
+        secureTextEntry={true}
       />
 
       <StatusBar style="auto" />
 
-      <Button onPress={doLogin} title="Login" color="#3E3BC7" />
+      <Text></Text>
+
+      <Button
+        onPress={doLogin}
+        title="Login"
+        color="#3E3BC7"
+        style={styles.button}
+      />
     </View>
   );
 };
@@ -77,6 +85,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     width: 250,
+    borderRadius: 10,
   },
 
   logo: {
@@ -87,6 +96,10 @@ const styles = StyleSheet.create({
 
   textoBienvenido: {
     fontSize: 30,
+  },
+
+  button: {
+    borderRadius: 10,
   },
 });
 
