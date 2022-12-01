@@ -10,7 +10,7 @@ export default function NewTrip(props) {
         {value: '$4000'},
         {value: '$7000'}
     ]
-
+// cc
     const [addrInit, setAddInit] = useState("");
     const [addrFin, setAddFin] = useState("");
     const [availableSeats, setAvailSeats] = useState("");
