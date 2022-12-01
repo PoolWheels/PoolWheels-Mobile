@@ -12,7 +12,7 @@ export default function Paymethodshome(props) {
 
     const deletepaymethod = async(idpaymeth) => {
         Alert.alert(" Eliminado ", " se elimino el metodo de pago.");
-        setpaymeths(await deleteTrip(idpaymeth));
+        //setpaymeths(await deleteTrip(idpaymeth));
       };
 
     return (
@@ -31,7 +31,7 @@ export default function Paymethodshome(props) {
         <Text>
         </Text>
         <Pressable style={styles.button} 
-        onPress={() => props.navigation.navigate("Agregar Metodo de Pago")} >
+        onPress={() => props.navigation.navigate("NewPayMethods")} >
             <Text style={styles.text}>    💳 Agregar Nuevo metodo de pago   </Text>
         </Pressable>
         <Text>

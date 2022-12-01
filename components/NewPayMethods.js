@@ -109,7 +109,7 @@ export default function NewpaymethodsView(props) {
                 title='Guardar metodo de pago'
                 onPress = {() => {
                     Alert.alert('Se ha agregado correctamente su metodo de pago')
-                    props.navigation.navigate("Metodos de Pago")
+                    props.navigation.navigate("PayMethods")
                 }}
             />
             <Button
@@ -117,7 +117,7 @@ export default function NewpaymethodsView(props) {
                 title='❌ Cancelar'
                 onPress = {() => {
                     Alert.alert('Cancelado correctamente')
-                    props.navigation.navigate("Metodos de Pago")
+                    props.navigation.navigate("PayMethods")
                 }}
             />
         </View>
