@@ -6,13 +6,8 @@ const trips = [
         availableSeats: 0,
         stops: {
             Calle_45_Av_Mutis: '$2000',
-            Stop2: '$5000',
-            Stop_3: '$7000'
-        },
-        passengers: {
-            p1: 'David',
-            p2: 'Diego',
-            p3: 'Zuly'
+            Av_68_Calle_80: '$5000',
+            Calle_170: '$7000'
         },
         finTime: '15:30',
         active: true
@@ -25,10 +20,6 @@ const trips = [
         stops: {
             Stop1: "$2000",
             Stop2: "$5000"
-        },
-        passengers : {
-            p1: 'Deivid',
-            p2: 'Eduardo',
         },
         finTime: '11:30',
         active: true
