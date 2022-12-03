@@ -182,6 +182,7 @@ export default function NewTrip(props) {
               props.navigation.navigate("HomeDriverUser");
             }}
           />
+          <Text>  </Text>
           <Button
             title="Guardar Viaje"
             onPress={() => {
