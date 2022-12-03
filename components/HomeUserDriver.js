@@ -20,7 +20,7 @@ export default function HomeUserDriver(props) {
         <View>
           <Text style={styles.title}>Bienvenida Lorena 👋!</Text>
         </View>
-        <View style={{ flex:1 }}>
+        <View style={{ flex: 1 }}>
           <FlatList
             data={trips}
             keyExtractor={(_, index) => index}
@@ -34,7 +34,7 @@ export default function HomeUserDriver(props) {
                   width: Dimensions.get("screen").width,
                   justifyContent: "center",
                   alignContent: "center",
-                  alignItems: 'center',
+                  alignItems: "center",
                   resizeMode: "cover",
                   borderRadius: 5,
                   marginBottom: 20,
@@ -42,12 +42,18 @@ export default function HomeUserDriver(props) {
                   borderColor: "rgb(27,74,255)",
                 }}
               >
-                <Text style={styles2.subtitles}>Punto de partida: {trip.addrInit}</Text>
-                <Text style={styles2.subtitles}>Dirección de Destino: {trip.addrFin}</Text>
-                <Text style={styles2.subtitles}>Puestos Disponibles: {trip.availableSeats}</Text>
+                <Text style={styles2.subtitles}>
+                  Punto de partida: {trip.addrInit}
+                </Text>
+                <Text style={styles2.subtitles}>
+                  Dirección de Destino: {trip.addrFin}
+                </Text>
+                <Text style={styles2.subtitles}>
+                  Puestos Disponibles: {trip.availableSeats}
+                </Text>
                 <Text style={styles2.subtitles}>Paradas:</Text>
-                {formatChildItems(trip.stops).map((stop) => (
-                  <Text style={styles2.hour}>
+                {formatChildItems(trip.stops).map((stop, index) => (
+                  <Text key={index} style={styles2.hour}>
                     {"          "}
                     {stop[0] + ": " + stop[1]}
                   </Text>
@@ -75,7 +81,7 @@ export default function HomeUserDriver(props) {
               props.navigation.navigate("PayMethods");
             }}
           />
-          <Text>  </Text>
+          <Text> </Text>
           <Button
             title="Soporte"
             onPress={() => {
